@@ -28,7 +28,7 @@ inquirer.prompt([
   },
   {
     type: "input",
-    name: "describe", 
+    name: "describe",
     message: "Breifly describe what your project does?"
   },
   {
@@ -42,18 +42,41 @@ inquirer.prompt([
     message: "What sections should be included in your Table of contents",
     name: "tableOfContents",
     choices: [
-      "Installation", 
-      "Usage", 
-      "Licenses", 
+      "Installation",
+      "Usage",
+      "Licenses",
       "Contributing",
       "Tests"
       //add your own
     ]
   }
 
-]).then(function(data) {
+]).then(function (data) {
 
   console.log(data);
+  // ****AXIOS*********from #33
+  axios.get(queryUrl)
+    .then(function (res) {
+      const repoNames = res.data.map(function (repo) {
+        return repo.name;
+      });
+
+      const repoNamesStr = repoNames.join("\n");
+
+      fs.writeFile("repos.txt", repoNamesStr, function (err) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(`Saved ${repoNames.length} repos`);
+      });
+    });
+
+
+  // end*********from #33
+
+
+  // *********from #15
 
   // var filename = data.projectName.toLowerCase().split(' ').join('') + ".json";
 
@@ -66,7 +89,11 @@ inquirer.prompt([
   //   console.log("Success!");
 
   // });
+  // end*********from #15
+
 });
+
+// ***********psuedo code
 //npm axios
 
 // * Questions
