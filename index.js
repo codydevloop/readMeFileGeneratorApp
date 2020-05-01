@@ -125,7 +125,7 @@ let createReadMe = function(userResponses,gitHubProfile){
    [codydevloop](${userResponses.gitHubUserName})
    # Project: ${userResponses.projectTitle} 
    
-      ${userResponses.projectDescription}
+  ${userResponses.projectDescription}
 
    ## Table of Contents
    * [Installation](#installation)
