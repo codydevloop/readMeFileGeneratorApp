@@ -125,7 +125,7 @@ let createReadMe = function(userResponses,gitHubProfile){
 
    # Project: ${userResponses.projectTitle} 
    
-   created by: [${userResponses.gitHubUserName}]
+   created by: ![codydevloop](https://github.com/codydevloop)
    ## Description of: ${userResponses.projectTitle}
    ${userResponses.projectDescription}
 
@@ -162,7 +162,7 @@ ${userResponses.installation}
 ${userResponses.challenges}
 ## Questions/Contact_Me
 You can reache me codydevloop@gmail.com
-[GitHubuser](${userResponses.gitHubUserName})
+[codydevloop](${userResponses.gitHubUserName})
 ## Portfolio
 ${gitHubProfile.data.blog}
 

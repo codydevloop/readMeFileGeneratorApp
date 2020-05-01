@@ -1,10 +1,10 @@
 ![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
 
-   # Project: it rocks 
+   # Project: readMeFileGeneratroApp 
    
-   created by: [codydevloop]
-   ## Description of: it rocks
-   kjkj
+   created by: ![codydevloop](https://github.com/codydevloop)
+   ## Description of: readMeFileGeneratroApp
+   I have been neglecting the readme portion of my projects for far to long.   The handly little program help guide through creating a basic readme.   No more excuses!!
 
    ## Table of Contents
    * [Installation](#installation)
@@ -24,22 +24,22 @@
    * [Questions](#questions)
 
 ## Installation
-jfjfj
+There are two NPM dependencies.  iquirer & axios
 ## Usage
-kjkjk
+from the terminal:  node index.js
 ## License
-MIT
+None
 ## Contribution/Credits
-jkjlj
+n/a
 ## Testing
-jkjlj
+n/a
 ## Feature-Requests
-jfjfj
+There are two NPM dependencies.  iquirer & axios
 ## Challenges
-kjlj
+callback hell
 ## Questions/Contact_Me
 You can reache me codydevloop@gmail.com
-[GitHubuser](codydevloop)
+[codydevloop](codydevloop)
 ## Portfolio
 https://codydevloop.github.io/Portfolio/.
 
