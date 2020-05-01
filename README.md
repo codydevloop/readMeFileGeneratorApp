@@ -1,7 +1,9 @@
 ![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
 
-   # Project: shw created by: codydevloop
-   ## Description of: shw
+   # Project: readMeFileGeneratorApp 
+   
+   created by: codydevloop
+   ## Description of: readMeFileGeneratorApp
    ## Table of Contents
    * [Installation](#installation)
   
@@ -20,19 +22,19 @@
    * [Questions](#questions)
 
 ## Installation
-nolpe
+The app is executed in Node.js  And has two NPM dependencies.
 ## Usage
-jkj
+you will need to run 'npm install'  to get required files
 ## License
-The Unlicense
+None
 ## Contribution/Credits
-noe
+none other than NPM authors
 ## Testing
-kjk
+n/a
 ## Feature-Requests
-nolpe
+The app is executed in Node.js  And has two NPM dependencies.
 ## Challenges
-jkl
+callback hell
 ## Questions/Contact_Me
 You can reache me codydevloop@gmail.com
 codydevloop 
