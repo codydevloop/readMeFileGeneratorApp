@@ -1,9 +1,9 @@
 //FINISHED PRODUCT APP THAT GENERATES README FILE
 //TAKING USER INPUT
-
 //npm inquirer
 //object deconstruction
 //store in object or class (this)
+
 
 // The README will be populated with the following:
 
@@ -19,87 +19,137 @@
 
 var inquirer = require("inquirer");
 var fs = require('fs');
+var axios = require('axios')
+const readMeObj = {};
 
 inquirer.prompt([
   {
     type: "input",
-    name: "projectName",
-    message: "What is the name of your project?"
+    name: "gitHubUserName",
+    message: "Lets build you a nice looking functional readme for this project!\nTo get started, please provdie your GitHub username"
+
   },
   {
     type: "input",
-    name: "describe",
-    message: "Breifly describe what your project does?"
+    name: "projectTitle",
+    message: "Please provide a Title for your project"
   },
   {
-    type: "confirm",
-    name: "trueFalse",
-    message: "Do you want to create a Table of contents?"
-    // condition
+    type: "input",
+    name: "projectDescription",
+    message: "Tell me about this awesome new project of yours.\n What does it do? What was your motivation?"
   },
   {
-    type: "checkbox",
-    message: "What sections should be included in your Table of contents",
-    name: "tableOfContents",
+    type: "input",
+    name: "installation",
+    message: "How do I install your application? Are there any 3rd Party dependencies?"
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "How do I use your application? How do I get it to run?"
+  },
+  {
+    type: "list",
+    message: "What lisensing information needs to be included",
+    name: "license",
     choices: [
-      "Installation",
-      "Usage",
-      "Licenses",
-      "Contributing",
-      "Tests"
+      "MIT",
+      "GNU GPLv3",
+      "The Unlicense",
+      "None"
       //add your own
     ]
+  },
+  {
+    type: "input",
+    name: "contributions",
+    message: "Did anyone else contribute to this project? Did you use anyone else's code?"
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "Have you developed any tests for this application.  How do you run them?"
+  },
+  {
+    type: "input",
+    name: "featurerequest",
+    message: "Do you have any future ideas for this project?"
   }
 
-]).then(function (data) {
+]).then(function (userResponses) {
 
-  console.log(data);
-  // ****AXIOS*********from #33
-  axios.get(queryUrl)
-    .then(function (res) {
-      const repoNames = res.data.map(function (repo) {
-        return repo.name;
-      });
+  readMeObj.gitHubUserName = userResponses.gitHubUserName;
+  readMeObj.projectTitle = userResponses.projectTitle;
+  readMeObj.projectDescription = userResponses.projectDescription;
+  readMeObj.tableOfContents = userResponses.tableOfContents;  // handy value for testing
+  
 
-      const repoNamesStr = repoNames.join("\n");
+  // ****Go get axios Datat from #33
+  // const queryUrl = `https://api.github.com/users/${data.gitHubUserName}/repos?per_page=100`;
 
-      fs.writeFile("repos.txt", repoNamesStr, function (err) {
+  const queryUrl = `https://api.github.com/users/${userResponses.gitHubUserName}`;
+  axios.get(queryUrl)  
+
+    .then(function (gitHubProfile) {
+      // console.log(gitHubProfile.data);
+      // console.log(userResponses);
+
+      //  REFERENCES**for the Questions/Contact me section
+      // console.log(gitHubProfile.data.avatar_url);
+      // console.log(gitHubProfile.data.email);
+      // console.log(gitHubProfile.data.location);
+      // console.log(gitHubProfile.data.blog);
+
+      // createReadMe(userResponses,gitHubProfile);
+      fs.writeFile("readme.md", createReadMe(userResponses,gitHubProfile) , function(err) {
+
         if (err) {
-          throw err;
+          return console.log(err);
         }
-
-        console.log(`Saved ${repoNames.length} repos`);
+      
+        console.log("Success!");
+      
       });
+
     });
-
-
-  // end*********from #33
-
-
-  // *********from #15
-
-  // var filename = data.projectName.toLowerCase().split(' ').join('') + ".json";
-
-  // fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-
-  //   if (err) {
-  //     return console.log(err);
-  //   }
-
-  //   console.log("Success!");
-
-  // });
-  // end*********from #15
-
 });
 
-// ***********psuedo code
-//npm axios
+let createReadMe = function(userResponses,gitHubProfile){
+   return(`# ${userResponses.projectTitle} created by ${userResponses.gitHubUserName}
+   ## Description of ${userResponses.projectTitle}
+   ## Table of Contents
+   * [Installation](#installation)
+   ${userResponses.installation}
+   * [Usage](#usage)
+   ${userResponses.usage}
 
-// * Questions
-//   * User GitHub profile picture
-//   * User GitHub email
-//   *badge
+   * [License](#license)
+   ${userResponses.licens}
+   * [Contribution/Credits](#Contributions/Credits)
+   ${userResponses.contributions}
+   * [Testing](#testing)
+   ${userResponses.tests}
+   * [FeatureRequests](#Feature Requests)
+   ${userResponses.installation}
+   * [Challenges](#challenges)
+   ${userResponses.challenges}
+   * [Questions](#questions)
 
-
-//write object/Class use projectname convention 
+## Installation
+## Usage
+## License
+## Contribution/Credits
+## Testing
+## Feature Requests
+## Challenges
+## Questions/Contact_Me
+You can reache me codydevloop@gmail.com
+${userResponses.gitHubUserName} 
+##Portfolio
+${gitHubProfile.data.blog}
+[GitHub](http://github.com) 
+   
+  `
+  );
+};
