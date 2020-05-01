@@ -1,10 +1,10 @@
 ![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
 
-   # Project: readMeFileGeneratorApp 
+   # Project: it rocks 
    
-   created by: [GitHubuser](codydevloop)
-   ## Description of: readMeFileGeneratorApp
-   The readme file is usually the most neglected portion of any project.  My projects are no exception to this statement.   The project is intended to make the process of readme creation super easy.
+   created by: [codydevloop]
+   ## Description of: it rocks
+   kjkj
 
    ## Table of Contents
    * [Installation](#installation)
@@ -23,26 +23,26 @@
   
    * [Questions](#questions)
 
-    ## Installation
-    NPM packages requirer & axios
-    ## Usage
-    Node.js -> node npm install
-    ## License
-    None
-    ## Contribution/Credits
-    no
-    ## Testing
-    no
-    ## Feature-Requests
-    NPM packages requirer & axios
-    ## Challenges
-    callback hell
-    ## Questions/Contact_Me
-    You can reache me codydevloop@gmail.com
-    [GitHubuser](codydevloop)
-    ## Portfolio
-    https://codydevloop.github.io/Portfolio/.
+## Installation
+jfjfj
+## Usage
+kjkjk
+## License
+MIT
+## Contribution/Credits
+jkjlj
+## Testing
+jkjlj
+## Feature-Requests
+jfjfj
+## Challenges
+kjlj
+## Questions/Contact_Me
+You can reache me codydevloop@gmail.com
+[GitHubuser](codydevloop)
+## Portfolio
+https://codydevloop.github.io/Portfolio/.
 
-    ![Image GitHub user](https://avatars3.githubusercontent.com/u/60554516?v=4)
+![Image GitHub user](https://avatars3.githubusercontent.com/u/60554516?v=4)
 
   
