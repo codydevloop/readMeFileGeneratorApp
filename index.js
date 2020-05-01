@@ -122,7 +122,7 @@ inquirer.prompt([
 
 let createReadMe = function(userResponses,gitHubProfile){
    return(`![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
-   ![Image GitHub user](${gitHubProfile.data.avatar_url})
+   [codydevloop](${userResponses.gitHubUserName})
    # Project: ${userResponses.projectTitle} 
    
       ${userResponses.projectDescription}
