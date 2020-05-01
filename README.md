@@ -2,8 +2,10 @@
 
    # Project: readMeFileGeneratorApp 
    
-   created by: codydevloop
+   created by: [GitHubuser](codydevloop)
    ## Description of: readMeFileGeneratorApp
+   The readme file is usually the most neglected portion of any project.  My projects are no exception to this statement.   The project is intended to make the process of readme creation super easy.
+
    ## Table of Contents
    * [Installation](#installation)
   
@@ -21,26 +23,26 @@
   
    * [Questions](#questions)
 
-## Installation
-The app is executed in Node.js  And has two NPM dependencies.
-## Usage
-you will need to run 'npm install'  to get required files
-## License
-None
-## Contribution/Credits
-none other than NPM authors
-## Testing
-n/a
-## Feature-Requests
-The app is executed in Node.js  And has two NPM dependencies.
-## Challenges
-callback hell
-## Questions/Contact_Me
-You can reache me codydevloop@gmail.com
-codydevloop 
-## Portfolio
-https://codydevloop.github.io/Portfolio/.
+    ## Installation
+    NPM packages requirer & axios
+    ## Usage
+    Node.js -> node npm install
+    ## License
+    None
+    ## Contribution/Credits
+    no
+    ## Testing
+    no
+    ## Feature-Requests
+    NPM packages requirer & axios
+    ## Challenges
+    callback hell
+    ## Questions/Contact_Me
+    You can reache me codydevloop@gmail.com
+    [GitHubuser](codydevloop)
+    ## Portfolio
+    https://codydevloop.github.io/Portfolio/.
 
-![Image GitHub user](https://avatars3.githubusercontent.com/u/60554516?v=4)
+    ![Image GitHub user](https://avatars3.githubusercontent.com/u/60554516?v=4)
 
   

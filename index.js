@@ -125,8 +125,10 @@ let createReadMe = function(userResponses,gitHubProfile){
 
    # Project: ${userResponses.projectTitle} 
    
-   created by: ${userResponses.gitHubUserName}
+   created by: [GitHubuser](${userResponses.gitHubUserName})
    ## Description of: ${userResponses.projectTitle}
+   ${userResponses.projectDescription}
+
    ## Table of Contents
    * [Installation](#installation)
   
@@ -144,27 +146,27 @@ let createReadMe = function(userResponses,gitHubProfile){
   
    * [Questions](#questions)
 
-## Installation
-${userResponses.installation}
-## Usage
-${userResponses.usage}
-## License
-${userResponses.license}
-## Contribution/Credits
-${userResponses.contributions}
-## Testing
-${userResponses.tests}
-## Feature-Requests
-${userResponses.installation}
-## Challenges
-${userResponses.challenges}
-## Questions/Contact_Me
-You can reache me codydevloop@gmail.com
-${userResponses.gitHubUserName} 
-## Portfolio
-${gitHubProfile.data.blog}
+    ## Installation
+    ${userResponses.installation}
+    ## Usage
+    ${userResponses.usage}
+    ## License
+    ${userResponses.license}
+    ## Contribution/Credits
+    ${userResponses.contributions}
+    ## Testing
+    ${userResponses.tests}
+    ## Feature-Requests
+    ${userResponses.installation}
+    ## Challenges
+    ${userResponses.challenges}
+    ## Questions/Contact_Me
+    You can reache me codydevloop@gmail.com
+    [GitHubuser](${userResponses.gitHubUserName})
+    ## Portfolio
+    ${gitHubProfile.data.blog}
 
-![Image GitHub user](${gitHubProfile.data.avatar_url})
+    ![Image GitHub user](${gitHubProfile.data.avatar_url})
 
   `
   );
