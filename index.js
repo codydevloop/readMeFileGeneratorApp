@@ -107,7 +107,7 @@ inquirer.prompt([
       // console.log(gitHubProfile.data.blog);
 
       // createReadMe(userResponses,gitHubProfile);
-      fs.writeFile("readme.md", createReadMe(userResponses,gitHubProfile) , function(err) {
+      fs.writeFile("youAreWelcome.md", createReadMe(userResponses,gitHubProfile) , function(err) {
 
         if (err) {
           return console.log(err);

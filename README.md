@@ -2,7 +2,7 @@
    [codydevloop](codydevloop)
    # Project: readMeFileGeneratorApp 
    
-  I have been neglecting readme files for too long.   This app guides you through 10 questions and creates a proper readme for my projects.  No more excuses.
+  :hammer_and_wrench: I have been neglecting readme files for too long.   This app guides you through 10 questions and creates a proper readme for my projects.  No more excuses.
 
    ## Table of Contents
    * [Installation](#installation)
