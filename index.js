@@ -1,43 +1,26 @@
-//FINISHED PRODUCT APP THAT GENERATES README FILE
-//TAKING USER INPUT
-//npm inquirer
-//object deconstruction
-//store in object or class (this)
-
-
-// The README will be populated with the following:
-
-// * At least one badge
-// * Project title
-// * Description
-// * Table of Contents
-// * Installation
-// * Usage
-// * License
-// * Contributing
-// * Tests
-
 var inquirer = require("inquirer");
-var fs = require('fs');
 var axios = require('axios')
-const readMeObj = {};
+var fs = require('fs');
+// const readMeObj = {}; //optional idea of storing all returned date into obj
+
+// NPM inquirer
 
 inquirer.prompt([
   {
     type: "input",
     name: "gitHubUserName",
-    message: "***WELCOME***\n (#1)Lets build you a nice looking functional readme for this project!\n-To get started, please provdie your GitHub username?\n"
+    message: "\n***WELCOME***\n (#1)I'm goint to guide you through this.!\n-To get started, please provdie your GitHub username?\n"
 
   },
   {
     type: "input",
     name: "projectTitle",
-    message: "(#2) Please provide a Title for your project.\n"
+    message: "(#2) Please provide a Title for your project/repo.\n"
   },
   {
     type: "input",
     name: "projectDescription",
-    message: "(#3) Tell me about this awesome new project of yours.\n-What does it do?\n-What was your motivation?\n"
+    message: "(#3) Tell me about this awesome new project/repo of yours.\n-What does it do?\n-What was your motivation?\n-What key concepts are being applied?"
   },
   {
     type: "input",
@@ -83,30 +66,16 @@ inquirer.prompt([
   }
 
 ]).then(function (userResponses) {
-
-  readMeObj.gitHubUserName = userResponses.gitHubUserName;
-  readMeObj.projectTitle = userResponses.projectTitle;
-  readMeObj.projectDescription = userResponses.projectDescription;
-  readMeObj.tableOfContents = userResponses.tableOfContents;  // handy value for testing
+  // userResponses.tableOfContents;  // handy value for testing
   
 
-  // ****Go get axios Datat from #33
-  // const queryUrl = `https://api.github.com/users/${data.gitHubUserName}/repos?per_page=100`;
+//  NPM AXIOS
 
   const queryUrl = `https://api.github.com/users/${userResponses.gitHubUserName}`;
   axios.get(queryUrl)  
 
     .then(function (gitHubProfile) {
-      // console.log(gitHubProfile.data);
-      // console.log(userResponses);
 
-      //  REFERENCES**for the Questions/Contact me section
-      // console.log(gitHubProfile.data.avatar_url);
-      // console.log(gitHubProfile.data.email);
-      // console.log(gitHubProfile.data.location);
-      // console.log(gitHubProfile.data.blog);
-
-      // createReadMe(userResponses,gitHubProfile);
       fs.writeFile("youAreWelcome.md", createReadMe(userResponses,gitHubProfile) , function(err) {
 
         if (err) {
