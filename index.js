@@ -134,7 +134,7 @@ ${userResponses.contributions}
 ## Testing
 ${userResponses.tests}
 ## Feature-Requests
-${userResponses.installation}
+${userResponses.featurerequest}
 ## Challenges
 ${userResponses.challenges}
 ## Questions/Contact_Me
