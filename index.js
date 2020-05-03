@@ -20,21 +20,26 @@ inquirer.prompt([
   {
     type: "input",
     name: "projectDescription",
-    message: "(#3) Tell me about this awesome new project/repo of yours.\n-What does it do?\n-What was your motivation?\n-What key concepts are being applied?"
+    message: "(#3) Tell me about this awesome new project/repo of yours.\n-What does it do?\n-What was your motivation?\n"
+  },
+  {
+    type: "input",
+    name: "keyConcepts",
+    message: "(#4) What key concepts did you apply in this project.\n"
   },
   {
     type: "input",
     name: "installation",
-    message: "(#4) How do I install your application?\n-Are there any 3rd Party dependencies?\n"
+    message: "(#5) How do I install your application?\n-Are there any 3rd Party dependencies?\n"
   },
   {
     type: "input",
     name: "usage",
-    message: "(#5) How do I use your application?\n-How do I get it to run?\n"
+    message: "(#6) How do I use your application?\n-How do I get it to run?\n"
   },
   {
     type: "list",
-    message: "(#6) What lisensing information needs to be included?\n",
+    message: "(#7) What lisensing information needs to be included?\n",
     name: "license",
     choices: [
       "MIT",
@@ -47,22 +52,22 @@ inquirer.prompt([
   {
     type: "input",
     name: "contributions",
-    message: "(#7) Did anyone else contribute to this project?\n-Did you use anyone else's code?\n"
+    message: "(#8) Did anyone else contribute to this project?\n-Did you use anyone else's code?\n"
   },
   {
     type: "input",
     name: "tests",
-    message: "(#8) Have you developed any tests for this application.\n-How do you run them?\n"
+    message: "(#9) Have you developed any tests for this application.\n-How do you run them?\n"
   },
   {
     type: "input",
     name: "featurerequest",
-    message: "(#9) Do you have any future ideas for this project?\n"
+    message: "(#10) Do you have any future ideas for this project?\n"
   },
   {
     type: "input",
     name: "challenges",
-    message: "(#10) What challenges did you have creating this application?\n"
+    message: "(#11) What challenges did you have creating this application?\n"
   }
 
 ]).then(function (userResponses) {
@@ -89,10 +94,15 @@ inquirer.prompt([
     });
 });
 
+// Write file contents
 let createReadMe = function(userResponses,gitHubProfile){
    return(`![Image last commit badge]( https://img.shields.io/github/last-commit/codydevloop/readMeFileGeneratorApp)
+
    [codydevloop](${userResponses.gitHubUserName})
    # Project: ${userResponses.projectTitle} 
+
+   **Key Concepts**
+   ${userResponses.keyConcepts}
    
   ${userResponses.projectDescription}
 
